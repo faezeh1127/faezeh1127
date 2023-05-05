@@ -5,8 +5,12 @@ const MYSQLI_PASSWORD = "";
 const database_name = "rahmahd_db";
 
 $database_connection = new mysqli(
-    $HOSTNAME, $MYSQLI_USERNAME, $MYSQLI_PASSWORD, $database_name);
+    $HOSTNAME,
+    $MYSQLI_USERNAME,
+    $MYSQLI_PASSWORD,
+    $database_name
+);
 
-if (!$conn)
-    exit("not connected");
+if ($database_connection->connect_error)
+    exit();
 ?>
