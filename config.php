@@ -1,3 +1,3 @@
 <?php
-$website_title = "test";
+$website_title = "راه مهد";
 ?>

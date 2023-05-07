@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS kindergartens (
   opening_date      DATE,
   work_hour_start   TIME,
   work_hour_end     TIME,
-  address           TEXT UNIQUE,
+  address           TEXT,
   telephone         VARCHAR(11),
   capacity          TINYINT(3) DEFAULT 0,
   max_capacity      TINYINT(3),
@@ -74,14 +74,14 @@ CREATE TABLE IF NOT EXISTS payment_factors (
 -- kd_images
 CREATE TABLE IF NOT EXISTS kd_images (
   kd_id             INT(11),
-  first_name        VARCHAR(256) UNIQUE
+  first_name        VARCHAR(256)
 );
 
 -- manager_user_login
 CREATE TABLE IF NOT EXISTS manager_user_login (
   id                INT(11) UNIQUE,
   token             VARCHAR(32) UNIQUE,
-  expire            DATETIME
+  expire            DATETIME,
   PRIMARY KEY (id)
 );
 
@@ -89,6 +89,6 @@ CREATE TABLE IF NOT EXISTS manager_user_login (
 CREATE TABLE IF NOT EXISTS admin_user_login (
   username          VARCHAR(16) UNIQUE,
   token             VARCHAR(32) UNIQUE,
-  expire            DATETIME
+  expire            DATETIME,
   PRIMARY KEY (username)
 );
